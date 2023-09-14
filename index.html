@@ -1,40 +1,243 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>R et Python au CASD</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+	<link rel="stylesheet" href="dist/reset.css" />
+	<link rel="stylesheet" href="dist/reveal.css" />
+	<link rel="stylesheet" href="dist/theme/black.css" />
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<a href="https://casd.eu">
+						<img src="logos/casd.png" alt="casd logo" style="
+                  height: 250px;
+                  margin: 0 auto 4rem auto;
+                  background: transparent;
+                  -webkit-filter: invert(1);
+                  filter: invert(1);
+                " class="demo-logo" />
+					</a>
+					<h3>R & Python au CASD</h3>
+					<p>
+						<small>Datascience</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Le programme</h3>
+					<ul>
+						<li>Organiser et gérer son projet</li>
+						<li>Installation des dépendances</li>
+						<li>Outils pour développer son application</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Python : Utiliser et gérer son environnement</h3>
+				</section>
+
+				<section>
+					Création de l'environnement conda :
+					<pre><code class="language-cmd"> conda create --name projet_1 python=3.9 --offline </code></pre>
+					<br></br>
+					Activation de l'environnement :
+					<pre><code class="language-cmd"> conda activate projet_1 </code></pre>
+				</section>
+
+
+
+				<section>
+					<h3>Gestion du code et de l'arbre de fichier</h3>
+					<div class="r-stack"> 
+				<p class="fragment current-visible">Mon objectif est de vous convaincre que ceci :</p>
+				<img class="fragment current-visible" src="logos/tree_directory_2.PNG">
+				<p class="fragment current-visible">est plus efficace que ceci :</p>
+				<img class="fragment current-visible" src="logos/tree_directory_1.PNG">
+				<p class="fragment current-visible">Pourquoi ?</p>
+				<img class="fragment fade_out" src="logos/tree_directory_3.PNG">
+			<div>
+				</section>
+
+				<section>
+					<h3>Et R ?</h3>
+					<div class="r-stack">
+				<p class="fragment">Bonne nouvelle : cela fonctionne aussi !</p>
 			</div>
+				</section>
+			
+				<section>
+					<h3>Utiliser Git</h3>
+					<ul>
+						<li>Avoir les différentes versions de son code en suivant les changements</li>
+						<li>Rétablir une version antérieure en cas de bug</li>
+						<li>Travailler de façon collaborative ?</li>
+					</ul>
+				</section>
+	
+				<section>
+					<h3>Au CASD</h3>
+					<ul>
+						<li>Pas de synchronisation avec un répertoire exterieur</li>
+						<li>Possibilité d'utiliser git de façon locale</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Les dépendances</h3>
+					
+				</section>
+
+				<section>
+					Fonctionnement :
+					<img src="logos/serveurs.png" height="800">
+				</section>
+
+				<section>
+					<h3>R</h3>
+					<pre><code class="language-r"> install.packages("package_name")</code></pre>
+					puis :
+					<pre><code class="language-r"> library("package_name")</code></pre>
+				</section>
+
+				<section>
+					<h3>Python</h3>
+					<pre><code class="language-cmd"> pip install package_name</code></pre>
+					ou :
+					<pre><code class="language-python"> pip install -r requirements.txt</code></pre>
+					puis :
+					<pre><code class="language-python"> import package_name</code></pre>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h3>Développer votre application</h3>
+
+					<ul>
+						<li>Les IDE</li>
+						<li>Le code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Rstudio</h3>
+
+					<ul>
+						<li>Pré-configuré pour R</li>
+						<li>Beaucoup d'options spécifiques utiles</li>
+					</ul>
+					
+				</section>
+
+				<section>
+					<h3>Visual Studio Code</h3>
+					<ul>
+						<li>Très nombreuses fonctions de personnalisation</li>
+						<li>Multi-language</li>
+						<li>Autocomplétion/sauvegarde automatique/formattage automatique</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h3>Coder en Python</h3>
+					app/core/functions.py : 
+					<pre><code class="language-python">def convert(age):
+	if age < 18 :
+		categorie = '[0-18]'
+	elif age < 30 :
+		categorie = '[18-35]'
+	elif age < 50 :
+		categorie = '[36-50]'
+	else :
+		categorie = '[51-110]'
+	return categorie
+					</pre></code>
+				</section>
+				<section>
+					<h3>Coder en Python</h3>
+					app/main.py : 
+					<pre><code class="language-python" data-line-numbers="1-4|6-11|13-15"># Imports
+import os
+import sys
+from app.functions import convert
+
+# Fonction principale
+def main():
+	print("Bienvenue !")
+	age_utilisateur = input("Entrez votre age : ")
+	categorie = convert(age_utilisateur)
+	print(f"Vous appartenenez aux {categorie} ans !")
+
+# Execution du code
+if __name__ == "__main__":
+	main()
+					</pre></code>
+				</section>
+
+				<section>
+					<h3>Coder en R</h3>
+					<pre><code class="language-r" data-line-numbers="1-2|4-10|12-18"># Imports
+library(shiny)
+
+# Fenetre principale de l'application
+ui <- fluidPage(
+	headerPanel("Mon Application Shiny"),
+	textInput("nom_utilisateur", "Entrez votre nom :", ""),
+	actionButton("bouton_soumettre", "Soumettre"),
+	verbatimTextOutput("message_bienvenue")
+)
+
+# Définition de la logique métier
+server <- function(input, output) {
+	output$message_bienvenue <- renderText({
+		if (!is.null(input$nom_utilisateur)) {
+			paste("Bonjour,", input$nom_utilisateur, "!")
+		}
+	})
+			</section>
+
+				<section>
+					<h3>Merci pour votre attention</h3>
+				</section>
+			</section>
+
+			
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+		});
+	</script>
+</body>
+
 </html>
