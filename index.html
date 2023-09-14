@@ -124,16 +124,30 @@
 					<pre><code class="language-python"> import package_name</code></pre>
 				</section>
 
+				<section>
+					<h3>Spécificité 1 :</h3>
+					<div class="r-stack">
+						<p class="fragment current-visible">Certains packages sont natifs !</p>
+						<p class="fragment fade-out"><pre><code> pip install sys</code></pre>
+						Ne fonctionnera pas car le package sys est inclus avec python</p>
+				</section>
+
 
 				<section>
-					<h3>Attention</h3>
+					<h3>Spécificité 2</h3>
 					<div class="r-stack">
 						<p class="fragment current-visible">L'ensemble des packages n'est pas disponible sur les serveurs internes !</p>
 						<p class="fragment fade-out"> En cas de paquet manquant :
 						service@casd.eu
 						</p>
 					</div>
-					
+				</section>
+
+				<section>
+					<h3>En cas de doute :</h3>
+						<pre><code>pip list</code></pre> ou <pre><code>conda list</code></pre></p>
+						affiche l'ensemble des paquets installées dans votre environnement !
+					</div>
 				</section>
 
 			</section>
