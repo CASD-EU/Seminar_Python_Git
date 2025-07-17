@@ -55,52 +55,89 @@
                 <h3>Why use Python?</h3>
                 <small></small>
                 <p>
-                    <em>Python</em> is a <span style="font-weight: bold;">General Purpose Language(GPL)</span> born February 1991. In the 2010s Python became popular, driven by the growing popularity of <em>data science</em>.
+                    <em>Python</em> is a <span style="font-weight: bold;">General Purpose Language(GPL)</span> born
+                    February 1991. In the 2010s Python became popular, driven by the growing popularity of <em>data
+                    science</em>.
                 </p>
 
                 <p class="fragment">
-                    <em>R</em> is a <span style="font-weight: bold;">Domain-Specific language (DSL)</span> for data analysis and visualization.
+                    <em>R</em> is a <span style="font-weight: bold;">Domain-Specific language (DSL)</span> for data
+                    analysis and visualization.
                 </p>
-              </section>
+            </section>
             <section>
                 <h4>Python Key Advantages:</h4>
 
-                    <ul>
-                        <li class="fragment">Simple and readable syntax</li>
-                        <li class="fragment">Cross-Platform and Versatile</li>
-                        <li class="fragment">Interoperability with other languages</li>
-                        <li class="fragment">Vast and mature ecosystem</li>
-                        <li class="fragment">Supports Multiple Paradigms(e.g. procedural, object-oriented, functional)</li>
-                    </ul>
+                <ul>
+                    <li class="fragment">Simple and readable syntax</li>
+                    <li class="fragment">Cross-Platform and Versatile</li>
+                    <li class="fragment">Interoperability with other languages</li>
+                    <li class="fragment">Vast and mature ecosystem</li>
+                    <li class="fragment">Supports Multiple Paradigms(e.g. procedural, object-oriented, functional)</li>
+                </ul>
 
                 <aside class="notes">
                     Python code is close to natural English
                     Runs on Linux, Windows, macOS without code changes.
                     Easily integrates with:
-                       - C/C++ via ctypes, cython, pybind11
-                       - Java via Jython
-                       - .NET via pythonnet
+                    - C/C++ via ctypes, cython, pybind11
+                    - Java via Jython
+                    - .NET via pythonnet
                     500k of libraries via PyPI and Conda:
-                       - Data science: pandas, numpy, matplotlib, scikit-learn
-                       - Web dev: Django, Flask, FastAPI
-                       - Automation: requests, selenium, pyautogui
-                       - AI/ML: tensorflow, torch, transformers
+                    - Data science: pandas, numpy, matplotlib, scikit-learn
+                    - Web dev: Django, Flask, FastAPI
+                    - Automation: requests, selenium, pyautogui
+                    - AI/ML: tensorflow, torch, transformers
                 </aside>
             </section>
-            <section>
+            <section id="disadvantages">
                 <h3>Some disadvantages</h3>
                 <ul>
-                    <li class="fragment"> <em>Interpreted Language</em>: slower than complied languages(e.g. C, Go)</li>
-                        <li class="fragment"><em>Dynamically Typed</em>: Python interpreter infers variable types automatically</li>
-                        <li class="fragment"><em>Weakly Typed</em>: 1 + True → 2</li>
-                        <li class="fragment"><em>Global Interpreter Lock (GIL)</em>: Threads cannot run in parallel on multiple cores</li>
+                    <li class="fragment"><em>Interpreted Language</em>: slower than complied languages(e.g. C, Go)</li>
+                    <li class="fragment"><em>Dynamically Typed</em>: Python interpreter infers variable types
+                        automatically <a href="#/var-type" class="button">⏩ Code example</a></li>
+                    <li class="fragment"><em>Not strongly Typed</em>: such as Java <a href="#/weak-type" class="button">⏩ Code example</a></li>
+                    <li class="fragment"><em>Global Interpreter Lock (GIL)</em>: Threads cannot run in parallel on
+                        multiple cores
+                    </li>
 
-                    </ul>
+                </ul>
+            </section>
+            <!-- var type code example-->
+            <section id="var-type">
+                <h3>Variables are dynamically typed in python</h3>
+
+                <pre><code class="python" data-trim data-line-numbers="1,4">
+                    x = 5
+                    print(f"type of x is: {type(x)}")
+                    # type of x is int
+                    x = "hello"
+                    print(f"type of x is: {type(x)}")
+                    # type of x is str
+                </code></pre>
+                <a href="#/disadvantages" class="button">⏩ Go back</a>
             </section>
 
-  <section>
+            <!-- var type code example-->
+            <section id="weak-type">
+                <h3>Python is weakly typed</h3>
+
+                <pre><code class="python" data-trim data-line-numbers="1,4">
+                    x = 5
+                    print(f"type of x is: {type(x)}")
+                    # type of x is int
+                    x = "hello"
+                    print(f"type of x is: {type(x)}")
+                    # type of x is str
+                </code></pre>
+                <a href="#/disadvantages" class="button">⏩ Go back</a>
+            </section>
+
+            <section>
                 <h3>Why use python for data science?</h3>
             </section>
+
+
         </section>
         <!--Slide 3: Key concepts in python-->
         <section>
