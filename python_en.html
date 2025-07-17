@@ -53,7 +53,7 @@
         <section>
             <section data-align="left">
                 <h3>Why use Python?</h3>
-                <small></small>
+
                 <p>
                     <em>Python</em> is a <span style="font-weight: bold;">General Purpose Language(GPL)</span> born
                     February 1991. In the 2010s Python became popular, driven by the growing popularity of <em>data
@@ -103,11 +103,12 @@
 
                 </ul>
             </section>
+
             <!-- var type code example-->
             <section id="var-type">
                 <h3>Variables are dynamically typed in python</h3>
 
-                <pre><code class="python" data-trim data-line-numbers="1,4">
+                <pre><code class="python" data-trim data-line-numbers="|1|4|">
                     x = 5
                     print(f"type of x is: {type(x)}")
                     # type of x is int
@@ -118,33 +119,50 @@
                 <a href="#/disadvantages" class="button">⏩ Go back</a>
             </section>
 
-            <!-- var type code example-->
+            <!-- weak type code example-->
             <section id="weak-type">
                 <h3>Python is weakly typed</h3>
 
-                <pre><code class="python" data-trim data-line-numbers="1,4">
-                    x = 5
-                    print(f"type of x is: {type(x)}")
-                    # type of x is int
-                    x = "hello"
-                    print(f"type of x is: {type(x)}")
-                    # type of x is str
+                <pre><code class="python" data-trim data-line-numbers="|2|4|5|">
+                    # python function checks operator types
+                    1 + "2"      # ❌ TypeError: unsupported operand types (int + str)
+                    # but some type is allowed
+                    1 + True     # ✅ 2        (True → 1)
+                    3 * "a"      # ✅ "aaa"
+
                 </code></pre>
                 <a href="#/disadvantages" class="button">⏩ Go back</a>
-            </section>
-
-            <section>
-                <h3>Why use python for data science?</h3>
             </section>
 
 
         </section>
         <!--Slide 3: Key concepts in python-->
+                        <small></small>
         <section>
             <section>
-                <h3>Virtual environments</h3>
+                <h3>Key Components in a Python Project</h3>
+                <ul>
+                    <small> <li class="fragment"><em>Python Interpreter</em>:  The core runtime that executes Python code</li></small>
+                   <small>  <li class="fragment"><em>Virtual Environment</em>: An isolated environment for avoiding version conflicts between packages.</li></small>
+                   <small>  <li class="fragment"><em>Package Manager</em>: Tools handle installation, upgrades, and removal of third-party libraries</li></small>
+                   <small>  <li class="fragment"><em>Integrated Development Environment (IDE)</em>: Environments provide code editing, linting, debugging.</li></small>
+                 <small>    <li class="fragment"><em>Project Structure & Configuration Files</em>: Files like `pyproject.toml` list project author, dependencies, Licence, etc.</li></small>
+
+                </ul>
             </section>
 
+            <section>
+                <p>A Python Interpreter is :</p>
+
+                <ul>
+                    <small> <li class="fragment"><em>Bytecode Compiler</em>:  Translates .py source files into .pyc bytecode</li></small>
+                   <small>  <li class="fragment"><em>Stack-based Virtual Machine</em>: An isolated environment for avoiding version conflicts between packages.</li></small>
+                   <small>  <li class="fragment"><em>Built-in Types and Functions</em>: Primitive types like int, str, etc. Functions like print, len, etc.</li></small>
+                   <small>  <li class="fragment"><em>Runtime</em>: Interfaces with the host OS (memory, file, socket, etc.)</li></small>
+                 <small>    <li class="fragment"><em>Garbage Collector</em>: Cyclic garbage cleaning to free memory</li></small>
+
+                </ul>
+            </section>
             <section>
                 <p>A Python virtual environment is :</p>
 
