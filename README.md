@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://revealjs.com">
-  <img src="logos/CASD.png" alt="Logo CASD" width="200">
+  <img src="assets/CASD.png" alt="Logo CASD" width="200">
   </a>
   <br><br>
 </p>
