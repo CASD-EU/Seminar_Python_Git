@@ -121,7 +121,7 @@
 
             <!-- weak type code example-->
             <section id="weak-type">
-                <h3>Python is weakly typed</h3>
+                <h3>Python is not strongly typed</h3>
 
                 <pre><code class="python" data-trim data-line-numbers="|2|4|5|">
                     # python function checks operator types
@@ -163,6 +163,17 @@
                      <small>    <li class="fragment"><em>Standard Library</em>: Module like `os`, `math`, `statistics`</li></small>
 
                 </ul>
+            </section>
+<!-- Slide for anaconda:            -->
+            <section>
+                <p>Anaconda in CASD:</p>
+
+              <pre><code class="language-cmd" data-trim data-line-numbers="|2|4|5|">
+                  # check if conda exist in current shell
+                  conda --version
+                  # enable conda cmd in powershell
+                  conda init powershell
+                </code></pre>
             </section>
             <section>
                 <p>A Python virtual environment is :</p>
@@ -219,6 +230,7 @@
                     <p class="fragment current-visible">Some packages are native!</p>
                     <pre><code class="fragment current-visible"> pip install sys</code></pre>
                     <p class="fragment current-visible">will not work because sys is distributed with Python</p>
+                </div>
             </section>
 
             <section>
