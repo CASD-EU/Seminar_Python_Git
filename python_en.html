@@ -36,7 +36,7 @@
                 </p>
             </section>
 
-            <section>
+            <section data-transition="fade-in slide-out">
                 <h3>Goals</h3>
                 <ul>
                     <li>Why use python?</li>
@@ -50,7 +50,7 @@
         </section>
 
         <!--Slide 2: Why use python?-->
-        <section>
+        <section data-transition="fade-in slide-out">
             <section data-align="left">
                 <h3>Why use Python?</h3>
 
@@ -96,7 +96,8 @@
                     <li class="fragment"><em>Interpreted Language</em>: slower than complied languages(e.g. C, Go)</li>
                     <li class="fragment"><em>Dynamically Typed</em>: Python interpreter infers variable types
                         automatically <a href="#/var-type" class="button">⏩ Code example</a></li>
-                    <li class="fragment"><em>Not strongly Typed</em>: such as Java <a href="#/weak-type" class="button">⏩ Code example</a></li>
+                    <li class="fragment"><em>Not strongly Typed</em>: such as Java <a href="#/weak-type" class="button">⏩
+                        Code example</a></li>
                     <li class="fragment"><em>Global Interpreter Lock (GIL)</em>: Threads cannot run in parallel on
                         multiple cores
                     </li>
@@ -108,7 +109,7 @@
             <section id="var-type">
                 <h3>Variables are dynamically typed in python</h3>
 
-                <pre><code class="python" data-trim data-line-numbers="|1|4|">
+                <pre><code class="language-python" data-trim data-line-numbers="|1|4|">
                     x = 5
                     print(f"type of x is: {type(x)}")
                     # type of x is int
@@ -123,7 +124,7 @@
             <section id="weak-type">
                 <h3>Python is not strongly typed</h3>
 
-                <pre><code class="python" data-trim data-line-numbers="|2|4|5|">
+                <pre><code class="language-python" data-trim data-line-numbers="|2|4|5|">
                     # python function checks operator types
                     1 + "2"      # ❌ TypeError: unsupported operand types (int + str)
                     # but some type is allowed
@@ -133,42 +134,195 @@
                 </code></pre>
                 <a href="#/disadvantages" class="button">⏩ Go back</a>
             </section>
-
-
         </section>
+
+
         <!--Slide 3: Key concepts in python-->
-                        <small></small>
-        <section>
+        <section data-transition="fade-in slide-out">
+            <!--Slide 3-1: Key concepts summery-->
             <section>
                 <h3>Key Components in a Python Project</h3>
                 <ul>
-                    <small> <li class="fragment"><em>Python Interpreter</em>:  The core runtime that executes Python code</li></small>
-                   <small>  <li class="fragment"><em>Virtual Environment</em>: An isolated environment for avoiding version conflicts between packages.</li></small>
-                   <small>  <li class="fragment"><em>Package Manager</em>: Tools handle installation, upgrades, and removal of third-party libraries</li></small>
-                   <small>  <li class="fragment"><em>Integrated Development Environment (IDE)</em>: Environments provide code editing, linting, debugging.</li></small>
-                 <small>    <li class="fragment"><em>Project Structure & Configuration Files</em>: Files like `pyproject.toml` list project author, dependencies, Licence, etc.</li></small>
+                    <small>
+                        <li class="fragment"><em>Python Interpreter</em>: The core runtime that executes Python code
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Virtual Environment</em>: An isolated environment for avoiding version
+                            conflicts between packages.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Package Manager</em>: Tools handle installation, upgrades, and removal
+                            of third-party libraries
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Integrated Development Environment (IDE)</em>: Environments provide
+                            code editing, linting, debugging.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Project Structure & Configuration Files</em>: Files like
+                            `pyproject.toml` list project author, dependencies, Licence, etc.
+                        </li>
+                    </small>
 
                 </ul>
             </section>
-
+            <!--Slide 3-2: python interpreter-->
             <section>
                 <p>A Python Interpreter is :</p>
 
                 <ul>
-                    <small> <li class="fragment"><em>Bytecode Compiler</em>:  Translates .py source files into .pyc bytecode</li></small>
-                   <small>  <li class="fragment"><em>Stack-based Virtual Machine</em>: An isolated environment for avoiding version conflicts between packages.</li></small>
-                   <small>  <li class="fragment"><em>Built-in Types and Functions</em>: Primitive types like int, str, etc. Functions like print, len, etc.</li></small>
-                   <small>  <li class="fragment"><em>Runtime</em>: Interfaces with the host OS (memory, file, socket, etc.)</li></small>
-                 <small>    <li class="fragment"><em>Garbage Collector</em>: Cyclic garbage cleaning to free memory</li></small>
-                     <small>    <li class="fragment"><em>Standard Library</em>: Module like `os`, `math`, `statistics`</li></small>
+                    <small>
+                        <li class="fragment"><em>Bytecode Compiler</em>: Translates .py source files into .pyc bytecode
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Stack-based Virtual Machine</em>: Executes .pyc bytecode instructions
+                            to allow python code to have the same output across OS
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Built-in Types and Functions</em>: Implementations of Primitive
+                            types(e.g. int, str, etc.) and functions(e.g. print, len, etc.)
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Runtime</em>: Interfaces with the host OS (memory, file, socket, etc.)
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Garbage Collector</em>: Cyclic garbage cleaning to free memory</li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Standard Library</em>: Module like `os`, `math`, `statistics`</li>
+                    </small>
 
                 </ul>
             </section>
-<!-- Slide for anaconda:            -->
+            <!--Slide 3-3: Virtual Environment-->
+            <section>
+                <p><em>Python Virtual Environment</em> is an isolated workspace that contains its <em>own Python
+                    interpreter and dependencies</em>.
+                </p>
+
+                <ul>
+                    <small>
+                        <li class="fragment"><em>Isolation</em>: Keep dependencies for each project separate to avoid
+                            conflicts.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Reproducibility</em>: Freeze (pip freeze) exact versions for repeatable
+                            builds.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Clean Environment</em>: Avoid polluting global/system Python with
+                            project-specific packages.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Multiple Python Versions</em>: Different projects can use different
+                            Python versions (e.g., 3.9 vs 3.12).
+                        </li>
+                    </small>
+
+                </ul>
+            </section>
+
+            <!--Slide 3-4: python package manager-->
+            <section>
+                <p><em>Package management</em> in Python refers to the system that handles:</p>
+                <ul>
+
+                    <li class="fragment"> Installing, upgrading, and removing <em>third-party libraries (a.k.a.
+                        packages)</em></li>
+
+
+                    <li class="fragment"> Managing dependencies between packages</li>
+
+
+                    <li class="fragment"> Ensuring version compatibility</li>
+                    <li class="fragment"> Popular tools: <em>pip, conda, poetry </em></li>
+
+                </ul>
+
+            </section>
+
+            <!--Slide 3-5: IDE for python package manager-->
+            <section>
+                <p>IDE for python:</p>
+                <p>An <em>IDE</em> is a software application that provides a complete set of tools for <em>writing,
+                    debugging, testing, and deploying
+                    code faster</em> in a single interface.</p>
+
+                <ul>
+                    <small>
+                        <li class="fragment"><em>PyCharm</em>: Excellent code analysis, debugger, etc. Heavy on memory.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Visual Studio Code (VS Code)</em>: Lightweight, needs to install
+                            plugins for python development
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>JupyterLab</em>: Notebook-Centric, best for data analysis, machine
+                            learning.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Spyder</em>: MATLAB-like interface, best for scientific computing.</li>
+                    </small>
+                </ul>
+            </section>
+            <!-- Slide 3-6: Python project structure and configuration files-->
+            <section>
+                <p>Python project structure and configuration files</p>
+                <pre data-id="code-animation"><code class="language-Bash" data-trim data-line-numbers="|3-10|12-15|24|25|26|27|28|"><script
+                        type="text/template">
+my_project/
+│
+├── src/               # Source code (actual application)
+│   └── my_project/    # Main package (same name as project)
+│       ├── __init__.py
+│       ├── core.py
+│       ├── utils.py
+│       └── submodule/
+│           ├── __init__.py
+│           └── logic.py
+│
+├── tests/     # Unit and integration tests
+│   ├── __init__.py
+│   ├── test_core.py
+│   └── test_logic.py
+│
+├── scripts/   # One-off scripts, CLI tools, migrations, etc.
+│   └── generate_report.py
+│
+├── docs/       # Documentation (Sphinx, Markdown, etc.)
+│   └── index.md
+│
+├── .gitignore
+├── MANIFEST.in      # To include extra resource into the packages
+├── requirements.txt      # Frozen dependencies for production
+├── requirements-dev.txt  # Dev/test dependencies (e.g., pytest, flake8)
+├── README.md
+├── pyproject.toml        # Modern build/configuration file
+					</script></code></pre>
+            </section>
+        </section>
+
+       <!--Slide 4: python in CASD-->
+        <section data-transition="fade-in slide-out">
+            <!-- Slide for anaconda:            -->
             <section>
                 <p>Anaconda in CASD:</p>
 
-              <pre><code class="language-cmd" data-trim data-line-numbers="|2|4|5|">
+                <pre><code class="language-cmd" data-trim data-line-numbers="|2|4|5|">
                   # check if conda exist in current shell
                   conda --version
                   # enable conda cmd in powershell
