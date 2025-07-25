@@ -352,6 +352,8 @@ my_project/
                  conda create --name project-name python=python-version --offline
                  # view existing virtual environment list
                  conda env list
+                 # check status of a virtual environment
+                 conda info --envs
 
                  # 3. activate a virtual environment
                  conda activate project-name
@@ -367,6 +369,9 @@ my_project/
                  # 5. Run your code
                  cd /path/to/project-name
                  python main.py
+
+                 # 6. Remove a virtual environment
+                 conda remove -n env_name --all
                  </script>
                 </code></pre>
             </section>
@@ -392,6 +397,7 @@ my_project/
                 <pre><code class="language-Bash">pip index versions package-name</code></pre>
                 <p>Contact service@casd.eu, if the required package is not available</p>
             </section>
+
         </section>
 
         <!--Slide 5: vscode in CASD-->
@@ -412,8 +418,6 @@ my_project/
         </section>
         <!--Slide 6: Basic python syntax -->
         <section>
-
-
                  <section>
                 <h3>Basic python syntax</h3>
                 <ul>
@@ -422,21 +426,35 @@ my_project/
                     <li class="fragment">Conditions </li>
                     <li class="fragment">Loops </li>
                     <li class="fragment">Functions </li>
-                    <li class="fragment">Lists and dicts </li>
+                    <li class="fragment">Common data structure </li>
                     <li class="fragment">Exception handling </li>
                     <li class="fragment">Imports </li>
 
-
                 </ul>
-            </section>
 
-
-            <section>
-                <h3>Indentation</h3>
-
+                <p class="fragment">Go to the notebook <a href="https://github.com/CASD-EU/Seminar_Python_Git/blob/main/notebooks/basic_python_syntax.ipynb">basic_python_syntax</a></p>
             </section>
         </section>
 
+        <!--Slide 7: Python for data science -->
+        <section>
+                 <section>
+                <h4>Python for data science</h4>
+                     <p>Python provides thousands of packages for data science. Below are some most popular packages</p>
+                <ul>
+                   <small> <li class="fragment"><em>Data Wrangling</em>:  <span style="color:#b2dba1;">pyspark, pandas</span>, pyarrow, dask, polars </li></small>
+                   <small> <li class="fragment"><em>Geospatial Data Science </em>: <span style="color:#b2dba1;">sedona, geopandas, shapely, pyproj, rasterio</span>, kepler.gl</li></small>
+                   <small> <li class="fragment"><em>Statistics and Math</em>: <span style="color:#b2dba1;">ydata-profiling, statsmodels, sympy, numpy</span>, scikit-misc</li></small>
+                   <small> <li class="fragment"><em>Machine Learning</em>: <span style="color:#b2dba1;">scikit-learn, xgboost</span>, lightgbm, catboost </li></small>
+                   <small> <li class="fragment"><em>Deep Learning</em>: <span style="color:#b2dba1;">tensorflow, torch, keras</span>, fastai</li></small>
+                   <small> <li class="fragment"><em>Time Series & Forecasting</em>: <span style="color:#b2dba1;">prophet, tsfresh, darts</span>, sktime </li></small>
+                   <small> <li class="fragment"><em>Natural Language Processing (NLP) </em>: <span style="color:#b2dba1;">nltk, spacy, transformers</span>, gensim, textblob, </li></small>
+
+                </ul>
+
+
+            </section>
+        </section>
 
     </div>
 </div>
