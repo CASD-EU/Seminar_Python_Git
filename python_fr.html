@@ -2,312 +2,480 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-	<title>Python au CASD</title>
+    <title>R and Python at CASD</title>
 
-	<link rel="stylesheet" href="dist/reset.css" />
-	<link rel="stylesheet" href="dist/reveal.css" />
-	<link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/reset.css"/>
+    <link rel="stylesheet" href="dist/reveal.css"/>
+    <link rel="stylesheet" href="dist/theme/dracula.css"/>
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css"/>
 </head>
 
 <body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<section>
-					<a href="https://casd.eu">
-						<img src="assets/CASD.png" alt="casd logo" style="
+<div class="reveal">
+    <div class="slides">
+        <!--Slide 1: Overview-->
+        <section>
+            <section>
+
+                <img src="assets/CASD.png" alt="casd logo" style="
                   height: 250px;
                   margin: 0 auto 4rem auto;
                   background: transparent;
                   -webkit-filter: invert(1);
                   filter: invert(1);
-                " class="demo-logo" />
-					</a>
-					<h3>Python au CASD</h3>
-					<p>
-						<small>Cellule Datascience</small>
-					</p>
-				</section>
+                " class="demo-logo"/>
 
-				<section>
-					<h3>Objectifs</h3>
-					<ul>
-						<li>Utiliser et gérer Python au CASD (environnement / dépendances)</li>
-						<li>GIT</li>
-						<li>Gestion de projet Python</li>
-						<li>Outils pour développer son application</li>
-					</ul>
-				</section>
-			</section>
+                <h3>Python at CASD</h3>
+                <p>
+                    <small>Datascience team</small>
+                </p>
+            </section>
 
-			<section>
-				<section>
-					<h3>Environnements virtuels</h3>
-				</section>
+            <section data-transition="fade-in slide-out">
+                <h3>Goals</h3>
+                <ul>
+                    <li>Why use python?</li>
+                    <li>Key concepts in python</li>
+                    <li>How to use Python at CASD?</li>
+                    <li>Basic python syntax</li>
+                    <li>Python for data science</li>
+                </ul>
+            </section>
+        </section>
 
-				<section>
-					<p>Un environnement virtuel Python c'est :</p>
+        <!--Slide 2: Why use python?-->
+        <section data-transition="fade-in slide-out">
+            <section data-align="left">
+                <h3>Why use Python?</h3>
 
-					<ul> 
-						<li>Une version de Python</li>
-						<li>Un ensemble de librairies associées</li>		
-					</ul>	
+                <p>
+                    <em>Python</em> is a <span style="font-weight: bold;">General Purpose Language(GPL)</span> born
+                    February 1991. In the 2010s Python became popular, driven by the growing popularity of <em>data
+                    science</em>.
+                </p>
 
-					<p>encapsulés dans un ensemble que l'on peut utiliser</p>
-				</section>
-					
-				<section>
-					<img src="assets/python-virtual-envs.webp" alt="illustration venv"/>
-				</section>
+                <p class="fragment">
+                    <em>R</em> is a <span style="font-weight: bold;">Domain-Specific language (DSL)</span> for data
+                    analysis and visualization.
+                </p>
+            </section>
+            <section>
+                <h4>Python Key Advantages:</h4>
 
-				<section>
-					<p>Cela permet d'assurer :</p>
-					<ul>
-						<li>Une isolation des dépendances entre les différentes applications</li>
-						<li>La gestion de différentes versions de Python</li>
-						<li>La gestion de différentes versions des librairies</li>
-					</ul>
-				</section>
+                <ul>
+                    <li class="fragment">Simple and readable syntax</li>
+                    <li class="fragment">Cross-Platform and Versatile</li>
+                    <li class="fragment">Interoperability with other languages</li>
+                    <li class="fragment">Vast and mature ecosystem</li>
+                    <li class="fragment">Supports Multiple Paradigms(e.g. procedural, object-oriented, functional)</li>
+                </ul>
 
-				<section>
-					<p>Deux technologies pour gérer ces environnements :</p>
-					<ul>
-						<li><b>Anaconda :</b> Windows / Linux / MacOS</li>
-						<li>Pyenv : Linux / MacOS</li>
-					</ul>
-				</section>
+                <aside class="notes">
+                    Python code is close to natural English
+                    Runs on Linux, Windows, macOS without code changes.
+                    Easily integrates with:
+                    - C/C++ via ctypes, cython, pybind11
+                    - Java via Jython
+                    - .NET via pythonnet
+                    500k of libraries via PyPI and Conda:
+                    - Data science: pandas, numpy, matplotlib, scikit-learn
+                    - Web dev: Django, Flask, FastAPI
+                    - Automation: requests, selenium, pyautogui
+                    - AI/ML: tensorflow, torch, transformers
+                </aside>
+            </section>
+            <section id="disadvantages">
+                <h3>Some disadvantages</h3>
+                <ul>
+                    <li class="fragment"><em>Interpreted Language</em>: slower than complied languages(e.g. C, Go)</li>
+                    <li class="fragment"><em>Dynamically Typed</em>: Python interpreter infers variable types
+                        automatically <a href="#/var-type" class="button">⏩ Code example</a></li>
+                    <li class="fragment"><em>Not strongly Typed</em>: such as Java <a href="#/weak-type" class="button">⏩
+                        Code example</a></li>
+                    <li class="fragment"><em>Global Interpreter Lock (GIL)</em>: Threads cannot run in parallel on
+                        multiple cores
+                    </li>
 
-				<section>
-					Création de l'environnement dans l'espace projet :
-					<pre><code class="language-cmd"> conda create --name projet_1 python=3.12 --offline </code></pre>
-					<br></br>
-					Activation de l'environnement :
-					<pre><code class="language-cmd"> conda activate projet_1 </code></pre>
-				</section>
+                </ul>
+            </section>
 
-				<section>
-					<h3>Installer des paquets dans l'environnement</h3>
-					<pre><code class="language-cmd"> pip install package_name</code></pre>
-					ou :
-					<pre><code class="language-python"> pip install -r requirements.txt</code></pre>
-					puis :
-					<pre><code class="language-python"> import package_name</code></pre>
-				</section>
+            <!-- var type code example-->
+            <section id="var-type">
+                <h3>Variables are dynamically typed in python</h3>
 
-				<section>
-					<h3>Spécificité Python :</h3>
-					<div class="r-stack">
-						<p class="fragment current-visible">Certains packages sont natifs !</p>
-						<pre><code class="fragment current-visible"> pip install sys</code></pre>
-						<p class="fragment current-visible">ne fonctionnera pas car sys est distribué avec Python</p>
-				</section>
+                <pre><code class="language-python" data-trim data-line-numbers="|1|4|">
+                    x = 5
+                    print(f"type of x is: {type(x)}")
+                    # type of x is int
+                    x = "hello"
+                    print(f"type of x is: {type(x)}")
+                    # type of x is str
+                </code></pre>
+                <a href="#/disadvantages" class="button">⏩ Go back</a>
+            </section>
 
-				<section>
-					<h3>Fonctionnement au CASD :</h3>
-					<img src="assets/serveurs.png" height="400">
-				</section>
+            <!-- weak type code example-->
+            <section id="weak-type">
+                <h3>Python is not strongly typed</h3>
 
-				<section>
-					<h3>Spécificité CASD :</h3>
-					<div class="r-stack">
-						<p class="fragment current-visible">L'ensemble des packages n'est pas disponible sur les serveurs internes !</p>
-						<p class="fragment current-visible"> En cas de paquet manquant :
-						service@casd.eu
-						</p>
-					</div>
-				</section>
+                <pre><code class="language-python" data-trim data-line-numbers="|2|4|5|">
+                    # python function checks operator types
+                    1 + "2"      # ❌ TypeError: unsupported operand types (int + str)
+                    # but some type is allowed
+                    1 + True     # ✅ 2        (True → 1)
+                    3 * "a"      # ✅ "aaa"
 
-				<section>
-					<h3>En cas de doute :</h3>
-						<pre><code>pip list</code></pre> ou <pre><code>conda list</code></pre></p>
-						affiche l'ensemble des paquets installées dans votre environnement !
-				</section>
-			</section>
-
-			<section>
-
-				<section>
-					<h3>Gestion du projet Python</h3>
-				</section>
-
-				<section>
-					<h3>Gestion du code et de l'arbre de fichier</h3>
-					<div class="r-stack"> 
-				<p class="fragment current-visible">Mon objectif est de vous convaincre que ceci :</p>
-				<img class="fragment current-visible" src="assets/Tree_directory_2.PNG" height="400">
-				<p class="fragment current-visible">est plus efficace que ceci :</p>
-				<img class="fragment current-visible" src="assets/Tree_directory_1.PNG" height="400">
-				<p class="fragment current-visible">Pourquoi ?</p>
-				<img class="fragment current-visible" src="assets/Tree_directory_3.png" height="400">
-			<div>
-				</section>
-
-				<section>
-					<h3>Règles générales :</h3>
-					<ul>
-						<li>S'appuyer sur des templates existants</li>
-						<li>Séparer les objectifs et les traiter de façon distinctes</li>
-						<li>Correctement cerner les besoins</li>
-						<li>Effectuer une conception générale en modules et sous modules qui communiquent</li>
-					</ul>
-				</section>
-
-			</section>
-			<section>
-
-				<section>
-					<h3>Git au CASD</h3>
-					
-				</section>
-
-				<section>
-					Git est un système de gestion de version de code qui permet d'apporter des modifications de façon progressive à une base de code informatique
-					
-				</section>
-
-				<section>
-					Git n'est pas github !
-
-					<img src="assets/git_github.png" alt="git is not github"/>
-				</section>
+                </code></pre>
+                <a href="#/disadvantages" class="button">⏩ Go back</a>
+            </section>
+        </section>
 
 
-				<section>
-					<h3>Intérêt de Git</h3>
-					<ul>
-						<li>Avoir différentes versions de son code en suivant les changements</li>
-						<li>Rétablir une version antérieure en cas de bug</li>
-						<li>Travailler de façon collaborative</li>
-						<li>Ne pas perdre son code en cas de panne sur une machine</li>
-					</ul>
-				</section>
+        <!--Slide 3: Key concepts in python-->
+        <section data-transition="fade-in slide-out">
+            <!--Slide 3-1: Key concepts summery-->
+            <section>
+                <h3>Key Components in a Python Project</h3>
+                <ul>
+                    <small>
+                        <li class="fragment"><em>Python Interpreter</em>: The core runtime that executes Python code
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Virtual Environment</em>: An isolated environment for avoiding version
+                            conflicts between packages.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Package Manager</em>: Tools handle installation, upgrades, and removal
+                            of third-party libraries
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Integrated Development Environment (IDE)</em>: Environments provide
+                            code editing, linting, debugging.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Project Structure & Configuration Files</em>: Files like
+                            `pyproject.toml` list project author, dependencies, Licence, etc.
+                        </li>
+                    </small>
 
-				<section>
-					<p>Principe de fonctionnement</p>
+                </ul>
+            </section>
+            <!--Slide 3-2: python interpreter-->
+            <section>
+                <p>A Python Interpreter is :</p>
 
-					<img src="assets/Git-Architechture.png" alt="git architechture" height="500">
-				</section>
+                <ul>
+                    <small>
+                        <li class="fragment"><em>Bytecode Compiler</em>: Translates .py source files into .pyc bytecode
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Stack-based Virtual Machine</em>: Executes .pyc bytecode instructions
+                            to allow python code to have the same output across OS
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Built-in Types and Functions</em>: Implementations of Primitive
+                            types(e.g. int, str, etc.) and functions(e.g. print, len, etc.)
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Runtime</em>: Interfaces with the host OS (memory, file, socket, etc.)
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Garbage Collector</em>: Cyclic garbage cleaning to free memory</li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Standard Library</em>: Module like `os`, `math`, `statistics`</li>
+                    </small>
 
-				<section>
-					<h3>Principe de fonctionnement</h3>
+                </ul>
+            </section>
+            <!--Slide 3-3: Virtual Environment-->
+            <section>
+                <p><em>Python Virtual Environment</em> is an isolated workspace that contains its <em>own Python
+                    interpreter and dependencies</em>.
+                </p>
 
-					<ul>
-						<li>Chaque utilisateur envoie des petites modifications à la base de code</li>
-						<li>Il décrit sa modification dans un message</li>
-						<li>Il envoie les modifications de façon progressive au dépot central</li>
-						<li>Les autres contributeurs peuvent récupérer les modifications</li>
-					</ul>
-					
-				</section>
-	
-				<section>
-					<h3>Au CASD</h3>
-					<ul>
-						<li>Pas de synchronisation avec un répertoire exterieur</li>
-						<li>Les accès aux providers (Github / Gitlab) sont coupés</li>
-					</ul>
-				</section>
+                <ul>
+                    <small>
+                        <li class="fragment"><em>Isolation</em>: Keep dependencies for each project separate to avoid
+                            conflicts.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Reproducibility</em>: Freeze (pip freeze) exact versions for repeatable
+                            builds.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Clean Environment</em>: Avoid polluting global/system Python with
+                            project-specific packages.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Multiple Python Versions</em>: Different projects can use different
+                            Python versions (e.g., 3.9 vs 3.12).
+                        </li>
+                    </small>
 
-				<section>
-					<h3>Au CASD</h3>
-					<ul>
-						<li>Git est disponible et peut être utilisé localement !</li>
-						<li>Le dépot distant est remplacé par un dépot local dans l'espace commun !</li>
-					</ul>
-				</section>
+                </ul>
+            </section>
+            <section>
+                <img src="assets/python-virtual-envs.webp" alt="illustration venv"/>
+            </section>
 
-				<section>
-					<h3>Principe du git bare</h3>
-					<img src="assets/git_bare.png" alt="git bare">
-					<ul>
-						<li>Le repertoire bare est dans l'espace commun, il n'est pas directement éditable</li>
-						<li>Les repertoires non bare sont dans les espaces personnels, ils sont éditables</li>
-					</ul>
-					
-				</section>
-			</section>
+            <!--Slide 3-4: python package manager-->
+            <section>
+                <p><em>Package management</em> in Python refers to the system that handles:</p>
+                <ul>
 
-			<section>
-				<section>
-					<h3>Développer une application</h3>
-				</section>
-
-				<section>
-					<h3>Visual Studio Code</h3>
-					<ul>
-						<li>Très nombreuses fonctions de personnalisation</li>
-						<li>Multi-language</li>
-						<li>Autocomplétion/sauvegarde automatique/formattage automatique</li>
-					</ul>
-				</section>
+                    <li class="fragment"> Installing, upgrading, and removing <em>third-party libraries (a.k.a.
+                        packages)</em></li>
 
 
-				<section>
-					<h3>Coder en Python</h3>
-					app/core/functions.py : 
-					<pre><code class="language-python">def convert(age):
-	if age < 18 :
-		categorie = '[0-18]'
-	elif age < 30 :
-		categorie = '[18-35]'
-	elif age < 50 :
-		categorie = '[36-50]'
-	else :
-		categorie = '[51-110]'
-	return categorie
-					</pre></code>
-				</section>
-				<section>
-					<h3>Coder en Python</h3>
-					app/main.py : 
-					<pre><code class="language-python" data-line-numbers="1-4|6-11|13-15"># Imports
-import os
-import sys
-from app.functions import convert
+                    <li class="fragment"> Managing dependencies between packages</li>
 
-# Fonction principale
-def main():
-	print("Bienvenue !")
-	age_utilisateur = input("Entrez votre age : ")
-	categorie = convert(age_utilisateur)
-	print(f"Vous appartenenez aux {categorie} ans !")
 
-# Execution du code
-if __name__ == "__main__":
-	main()
-					</pre></code>
-				</section>
+                    <li class="fragment"> Ensuring version compatibility</li>
+                    <li class="fragment"> Popular tools: <em>pip, conda, poetry </em></li>
 
-				<section>
-					<h3>Merci pour votre attention</h3>
-				</section>
-			</section>
+                </ul>
 
-			
-		</div>
-	</div>
+            </section>
 
-	<script src="dist/reveal.js"></script>
-	<script src="plugin/notes/notes.js"></script>
-	<script src="plugin/markdown/markdown.js"></script>
-	<script src="plugin/highlight/highlight.js"></script>
-	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			hash: true,
+            <!--Slide 3-5: IDE for python package manager-->
+            <section>
+                <p>IDE for python:</p>
+                <p>An <em>IDE</em> is a software application that provides a complete set of tools for <em>writing,
+                    debugging, testing, and deploying
+                    code faster</em> in a single interface.</p>
 
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-		});
-	</script>
+                <ul>
+                    <small>
+                        <li class="fragment"><em>PyCharm</em>: Excellent code analysis, debugger, etc. Heavy on memory.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Visual Studio Code (VS Code)</em>: Lightweight, needs to install
+                            plugins for python development
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>JupyterLab</em>: Notebook-Centric, best for data analysis, machine
+                            learning.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Spyder</em>: MATLAB-like interface, best for scientific computing.</li>
+                    </small>
+                </ul>
+            </section>
+            <!-- Slide 3-6: Python project structure and configuration files-->
+            <section>
+                <p>Python project structure and configuration files</p>
+                <pre data-id="code-animation"><code class="language-Bash" data-trim
+                                                    data-line-numbers="|3-10|12-15|24|25|26|27|28|"><script
+                        type="text/template">
+my_project/
+│
+├── src/               # Source code (actual application)
+│   └── my_project/    # Main package (same name as project)
+│       ├── __init__.py
+│       ├── core.py
+│       ├── utils.py
+│       └── submodule/
+│           ├── __init__.py
+│           └── logic.py
+│
+├── tests/     # Unit and integration tests
+│   ├── __init__.py
+│   ├── test_core.py
+│   └── test_logic.py
+│
+├── scripts/   # One-off scripts, CLI tools, migrations, etc.
+│   └── generate_report.py
+│
+├── docs/       # Documentation (Sphinx, Markdown, etc.)
+│   └── index.md
+│
+├── .gitignore
+├── MANIFEST.in      # To include extra resource into the packages
+├── requirements.txt      # Frozen dependencies for production
+├── requirements-dev.txt  # Dev/test dependencies (e.g., pytest, flake8)
+├── README.md
+├── pyproject.toml        # Modern build/configuration file
+					</script></code></pre>
+            </section>
+        </section>
+
+        <!--Slide 4: python in CASD-->
+        <section data-transition="fade-in slide-out">
+            <!-- Slide 4-1: overview            -->
+            <section>
+                <p>Python in CASD</p>
+
+                <ul>
+                    <li class="fragment"><em>Python Interpreter</em>: conda</li>
+                    <li class="fragment"><em>Virtual Environment</em>: conda</li>
+                    <li class="fragment"><em>Package Manager</em>: pip</li>
+                    <li class="fragment"><em>Integrated Development Environment (IDE)</em>: vs-code</li>
+                    <li class="fragment"><em>Project Structure & Configuration Files</em>: CASD best practices</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>CASD VS Outside world:</h3>
+                <img src="assets/serveurs.png" height="400">
+            </section>
+            <section>
+                <p>SOP for creating python project in CASD</p>
+                <pre data-id="code-animation"><code class="language-powershell" data-trim
+                                                    data-line-numbers="|1-4|6-9|11-12|14-20|22-24|">
+                     <script type="text/template">
+                 # 1. check if conda exists in the current shell
+                 conda --version
+                 # enable conda cmd in powershell (optional)
+                 conda init powershell
+
+                 # 2. create a virtual environment
+                 conda create --name project-name python=python-version --offline
+                 # view existing virtual environment list
+                 conda env list
+                 # check status of a virtual environment
+                 conda info --envs
+
+                 # 3. activate a virtual environment
+                 conda activate project-name
+
+                 # 4. manage packages of your porject
+                 # check installed package list
+                 pip list
+                 # install a new package, make sure the casd pypi server is on
+                 pip install pandas
+                 # install package via requirements.txt
+                 pip install -r requirements.txt
+
+                 # 5. Run your code
+                 cd /path/to/project-name
+                 python main.py
+
+                 # 6. Remove a virtual environment
+                 conda remove -n env_name --all
+                 </script>
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Python packages :</h3>
+
+                <p>Standard packages are native in python Interpreter!</p>
+                <pre><code> pip install sys</code></pre>
+                <p class="fragment">This command will <em>fail</em>, because <em>sys</em> is a standard package,it's
+                    already in the python environment. We can use the standard package directly.</p>
+                <pre><code> import sys</code></pre>
+
+            </section>
+
+            <section>
+                <h3>3rd party packages :</h3>
+                <small><p>Users need to activate the <em>CASD PyPi server</em>, before running the below command </p></small>
+                <pre><code>pip install pandas</code></pre>
+                <small><p><em>CASD PyPi server</em> does not have all the packages in the official PyPi repo. You can check
+                    package availabilities
+                    with the below commands :</p></small>
+                <pre><code class="language-Bash">pip install package-name --dry-run</code></pre>
+                or
+                <pre><code class="language-Bash">pip index versions package-name</code></pre>
+                <p>Contact <em>service@casd.eu</em>, if the required package is not available</p>
+            </section>
+
+        </section>
+
+        <!--Slide 5: vscode in CASD-->
+        <section>
+            <h2>VScode in CASD</h2>
+            <p>By default, <em>vscode</em> does not have the required plugins for python development.</p>
+
+            <p>CASD provides a list of <em>vscode</em> plugins for python development:</p>
+
+            <ul>
+                <li class="fragment"><em>Plugin location</em>:</li>
+                <li class="fragment"><em>Plugin for python</em>: conda</li>
+                <li class="fragment"><em>Plugin for markdown</em>: pip</li>
+                <li class="fragment"><em>Plugin for Git</em>: vs-code</li>
+
+            </ul>
+
+        </section>
+        <!--Slide 6: Basic python syntax -->
+        <section>
+                 <section>
+                <h3>Basic python syntax</h3>
+                <ul>
+                    <li class="fragment">Indentation (Important!) </li>
+                    <li class="fragment">Variables and Data Types </li>
+                    <li class="fragment">Conditions </li>
+                    <li class="fragment">Loops </li>
+                    <li class="fragment">Functions </li>
+                    <li class="fragment">Common data structure </li>
+                    <li class="fragment">Exception handling </li>
+                    <li class="fragment">Imports </li>
+
+                </ul>
+
+                <p class="fragment">Go to the TP2: <a href="https://github.com/CASD-EU/Seminar_Python_Git/blob/main/notebooks/basic_python_syntax.ipynb">basic_python_syntax</a></p>
+            </section>
+        </section>
+
+        <!--Slide 7: Python for data science -->
+        <section>
+                 <section>
+                <h4>Python for data science</h4>
+                     <p>Python provides thousands of packages for data science. Below are some most popular packages</p>
+                <ul>
+                   <small> <li class="fragment"><em>Data Wrangling</em>:  <span style="color:#b2dba1;">pyspark, pandas</span>, pyarrow, dask, polars </li></small>
+                   <small> <li class="fragment"><em>Geospatial Data Science </em>: <span style="color:#b2dba1;">sedona, geopandas, shapely, pyproj, rasterio</span>, kepler.gl</li></small>
+                   <small> <li class="fragment"><em>Statistics and Math</em>: <span style="color:#b2dba1;">ydata-profiling, statsmodels, sympy, numpy</span>, scikit-misc</li></small>
+                   <small> <li class="fragment"><em>Machine Learning</em>: <span style="color:#b2dba1;">scikit-learn, xgboost</span>, lightgbm, catboost </li></small>
+                   <small> <li class="fragment"><em>Deep Learning</em>: <span style="color:#b2dba1;">tensorflow, torch, keras</span>, fastai</li></small>
+                   <small> <li class="fragment"><em>Time Series & Forecasting</em>: <span style="color:#b2dba1;">prophet, tsfresh, darts</span>, sktime </li></small>
+                   <small> <li class="fragment"><em>Natural Language Processing (NLP) </em>: <span style="color:#b2dba1;">nltk, spacy, transformers</span>, gensim, textblob, </li></small>
+
+                </ul>
+
+
+            </section>
+        </section>
+
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+</script>
 </body>
 
 </html>
