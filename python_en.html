@@ -382,20 +382,22 @@ my_project/
                 <p>Standard packages are native in python Interpreter!</p>
                 <pre><code> pip install sys</code></pre>
                 <p class="fragment">This command will <em>fail</em>, because <em>sys</em> is a standard package,it's
-                    already in
-                    the python environment</p>
+                    already in the python environment. We can use the standard package directly.</p>
+                <pre><code> import sys</code></pre>
 
             </section>
 
             <section>
                 <h3>3rd party packages :</h3>
-                <p><em>CASD PyPi server</em> does not have all the packages in the official PyPi repo. You can check
+                <small><p>Users need to activate the <em>CASD PyPi server</em>, before running the below command </p></small>
+                <pre><code>pip install pandas</code></pre>
+                <small><p><em>CASD PyPi server</em> does not have all the packages in the official PyPi repo. You can check
                     package availabilities
-                    with the below commands :</p>
+                    with the below commands :</p></small>
                 <pre><code class="language-Bash">pip install package-name --dry-run</code></pre>
                 or
                 <pre><code class="language-Bash">pip index versions package-name</code></pre>
-                <p>Contact service@casd.eu, if the required package is not available</p>
+                <p>Contact <em>service@casd.eu</em>, if the required package is not available</p>
             </section>
 
         </section>
@@ -432,7 +434,7 @@ my_project/
 
                 </ul>
 
-                <p class="fragment">Go to the notebook <a href="https://github.com/CASD-EU/Seminar_Python_Git/blob/main/notebooks/basic_python_syntax.ipynb">basic_python_syntax</a></p>
+                <p class="fragment">Go to the TP2: <a href="https://github.com/CASD-EU/Seminar_Python_Git/blob/main/notebooks/basic_python_syntax.ipynb">basic_python_syntax</a></p>
             </section>
         </section>
 
