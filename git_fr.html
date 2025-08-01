@@ -34,19 +34,19 @@
                   filter: invert(1);
                 " class="demo-logo"/>
                 </a>
-                <h3>Git at CASD</h3>
+                <h3>Git au CASD</h3>
                 <p>
-                    <small>Datascience team</small>
+                    <small>Equipe Datascience</small>
                 </p>
             </section>
 
             <section class="left-align">
                 <h3>Goals</h3>
                 <ul>
-                    <li>What is git?</li>
-                    <li>How does git work?</li>
-                    <li>What is GitHub/Gitlab?</li>
-                    <li>Git at CASD</li>
+                    <li>Qu'est-ce que Git ?</li>
+                    <li>Comment fonctionne Git ?</li>
+                    <li>Qu'est-ce que GitHub/Gitlab ?</li>
+                    <li>Git au CASD</li>
                 </ul>
             </section>
         </section>
@@ -54,42 +54,47 @@
         <!--Slide 1: What is git?-->
         <section>
             <section class="left-align">
-                <h3>What is git?</h3>
+                <h3>Qu'est-ce que Git ?</h3>
 
-                <p><em>Git</em> is a distributed <em>version control system (VCS)</em> created by <em>Linus
-                Torvalds</em> in 2005 to manage the Linux kernel. The main objective of git is: </p>
+                <p><em>Git</em> est un <em>outil de versioning</em> distribué, créé par <em>Linus
+                Torvalds</em> en 2005 pour gérer le noyau Linux. Les principales caractéristiques de Git sont : </p>
 
                 <ul>
-                    <li><em>Version control</em>: Every change is recorded with author, date, and message.</li>
-                    <li><em>Backtracking</em>: Recover any version of any file at any time.</li>
-                    <li><em>Collaboration</em>: Creating a "parallel universe" for your code to make changes safely</li>
+                    <li><em>Le versionning</em> : Le traçage détaillé (auteur, description, ...) et chronologique des modifications.</li>
+                    <li><em>La retroversion</em> : La possibilité de revenir à toute version antérieure d'un fichier.</li>
+                    <li><em>La collaboration</em> : La possibilité de travailler à plusieurs, en partageant ses contributions .</li>
                 </ul>
 
                 <p></p>
             </section>
 
             <section>
-                <h3>Key concepts in git (1)</h3>
+                <h3>Les principaux concepts de Git (1)</h3>
                 <ul>
-                    <li><em>Git Repository(repo)</em>: is the project folder where Git tracks all versions of your files</li>
-                    <li><em>Working Directory</em>: The files and folders you're actively editing.</li>
-                    <li><em>Staging Area (Index)</em>: A temporary area to preview and prepare changes before committing.</li>
-                    <li><em>Snapshot</em>: A snapshot records all your files at a given point of time.</li>
-                    <li><em>Commit</em>: The act of taking a snapshot with date, author, and message.</li>
+                    <li><em>Dépôt Git (repo)</em> : Le répertoire où Git enregistre toutes les modifications de vos fichiers</li>
+                    <li><em>Répertoire de travail</em> : L'espace contenant les répertoires et fichiers suivis par Git.</li>
+                    <li><em>Index</em> : Un espace temporaire pour détailler les modifications avant de les valider.</li>
+                    <li><em>Instantané (Snapshot)</em> : Une sauvegarde de l'état de tous les fichiers à un instant donné.</li>
 
                 </ul>
             </section>
 
             <section>
-                <h3>Key concepts in git (2)</h3>
+                <h3>Les principaux concepts de Git (2)</h3>
                 <ul>
-                    <li><em>Branch</em>: A branch is a collection of linked commits. Each repo must have at least one branch. The main branch is called <em>master</em> branch</li>
-                    <li><em>Master Branch</em>: is the production-ready code of your project </li>
-                    <li><em>HEAD</em>: A pointer to your current branch. It represents where you are in the Git history, and where the next commit will be written</li>
-                    <li><em>Merging Branch</em>: A temporary area to preview and prepare changes before committing.</li>
+                    <li><em>Commit</em> : L'action qui valide les modifications et enregistre un instanné incluant la date, l'auteur et une description.</li>                    
+                    <li><em>Branche</em> : Collection organisée de commits. Chaque repo contient au moins une branche. La branche principale est appelée la <em>master</em>. </li>
+                    <li><em>Branche master</em> : La branche contenant la version la plus opérationnelle et robuste du code, dédiée à la production.</li>
                 </ul>
             </section>
 
+             <section>
+                <h3>Les principaux concepts de Git (3)</h3>
+                <ul>
+                    <li><em>HEAD</em> : Un pointeur désignant la position actuelle dans la branche active, où sera enregistré le prochain commit.</li>
+                    <li><em>Fusion (merge)</em> : Un espace temporaire pour prévisualiser et valider les modifications lors de l'enregistrement des modifications d'une branche dans une autre.</li>
+                </ul>
+            </section>
 
         </section>
 
@@ -97,13 +102,13 @@
 
         <section>
             <section>
-                <h3>Git workflow</h3>
+                <h3>Workflow Git</h3>
                 <img src="assets/git_workflow_commands.png" alt="git-workflow" style="width: 60%; height: auto;"/>
 
             </section>
 
             <section>
-                 <h3>Git merge branch</h3>
+                 <h3>Fusion de branches</h3>
                  <img src="assets/git-branch.png" alt="git-branch"/>
             </section>
 
@@ -120,27 +125,27 @@
 
         <section>
             <section class="left-align">
-                <h3>What is github?</h3>
-                <p><a href="https://github.com/">github.com</a> is the most popular web-based git repository hosting service. It adds
-                extra functinality on top of git (e.g. UI, pull requests, project management, etc.). There are other similar git hosting services:</p>
+                <h3>Qu'est-ce que Github ?</h3>
+                <p><a href="https://github.com/">github.com</a> est le service web d'hébergement de dépôts Git le plus populaire. Il ajoute de 
+                nombreuses fonctionnalités à Git (ex : interface utilisateur, pull requests, système de gestion de projets, etc). Il existe d'autres solutions similaires :</p>
 
                 <ul>
                     <li><a href="https://about.gitlab.com/">Gitlab.com</a></li>
-                    <li><a href="https://bitbucket.org/">Bitbucket (by Atlassian)</a> </li>
+                    <li><a href="https://bitbucket.org/">Bitbucket (par Atlassian)</a> </li>
                     <li><a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a></li>
                     <li><a href="https://azure.microsoft.com/en-us/products/devops">Azure DevOps (Repos)</a></li>
                 </ul>
             </section>
 
             <section class="left-align">
-                <h3>Self-hosted web-based git repository </h3>
-                <p>There are many self-hosted web-based git repository solutions:</p>
+                <h3>Services web Git auto-hébergés </h3>
+                <p>Il existe de nombreuses solutions web Git auto-hébergées :</p>
 
                 <ul>
-                    <li><em>GitLab Community Edition (CE)</em>: Full-featured web-based git repository and open source</li>
-                    <li>Gitea: Lightweight, open source, easy to install </li>
-                    <li>SourceHut: Modular, minimalist, fast</li>
-                    <li>Gitprep: It is Github clone</li>
+                    <li><em>GitLab Community Edition (CE)</em> : Open-source et très complète </li>
+                    <li>Gitea : Open source, légère et facile à installer </li>
+                    <li>SourceHut : Modulaire, minimaliste et rapide </li>
+                    <li>Gitprep : Clône de Github </li>
                 </ul>
             </section>
         </section>
@@ -148,22 +153,22 @@
          <!--Slide 4: git at casd -->
           <section>
             <section >
-                <h3>Git at casd</h3>
-                <p>CASD proposes two types of remote git repository: <em>git-bare</em> and <em>self-hosted gitlab-ce server</em> </p>
+                <h3>Git au casd</h3>
+                <p>Le CASD propose propose deux types de dépôts Git distants : un dépôt <em>git-bare</em>, et <em>un serveur auto-hébergé gitlab-ce</em> </p>
                 <ul>
-                    <small><li>Git Bare Repository: provided by default for all CASD projects</li></small>
-                    <small><li>Gitlab-ce server: need to ask <em>PMS</em> for a cost estimation based on the server config</li></small>
+                    <small><li>Dépôt Git Bare : disponible par défaut pour tous les projets.</li></small>
+                    <small><li>Serveur Gitlab-ce : disponible uniquement sur demande <em>à l'équipe PMS</em>, après une estimation de coût basée sur la configuration du serveur.</li></small>
                 </ul>
             </section>
 
             <section>
-                <h3>What is a Git Bare Repository? </h3>
-                <p>A bare repository is a Git repository that does not have a working directory. It only contains the <em>.git directory</em>
-                    (i.e., the version control data), and it's typically used:</p>
+                <h3>Qu'est-ce qu'un dépôt Git Bare ? </h3>
+                <p>Un dépôt Git bare est un dépôt Git qui ne dispose pas d'un répertoire de travail. Il ne contient que le <em>répertoire .git</em>
+                    (i.e., les données de versionning). On l'utilise généralement :</p>
 
                 <ul>
-                    <li>As a <em>central repository</em> for collaboration (lightweight version of GitHub).</li>
-                    <li>As a <em>continuous deployment target</em>.</li>
+                    <li>Comme un <em>dépôt central</em> pour un projet collaboratif (version allégée de Github)</li>
+                    <li>Comme une <em>cible de déploiement en continu</em></li>
                 </ul>
             </section>
             <section>
