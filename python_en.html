@@ -341,7 +341,7 @@ my_project/
             <section>
                 <p>SOP for creating python project in CASD</p>
                 <pre data-id="code-animation"><code class="language-powershell" data-trim
-                                                    data-line-numbers="|1-4|6-11|13-14|16-22|24-26|28-29|">
+                                                    data-line-numbers="|1-4|6-11|13-14|16-22|24-26|28-29|31-32|">
                      <script type="text/template">
                  # 1. check if conda exists in the current shell
                  conda --version
@@ -358,7 +358,7 @@ my_project/
                  # 3. activate a virtual environment
                  conda activate project-name
 
-                 # 4. manage packages of your porject
+                 # 4. manage packages of your project
                  # check installed package list
                  pip list
                  # install a new package, make sure the casd pypi server is on
@@ -370,7 +370,10 @@ my_project/
                  cd /path/to/project-name
                  python main.py
 
-                 # 6. Remove a virtual environment
+                 # 6. Close a virtual environment
+                 conda deactivate
+
+                 # 7. Remove a virtual environment
                  conda remove -n env_name --all
                  </script>
                 </code></pre>
