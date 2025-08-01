@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <title>R and Python at CASD</title>
+    <title>Git at CASD</title>
 
     <link rel="stylesheet" href="dist/reset.css"/>
     <link rel="stylesheet" href="dist/reveal.css"/>
@@ -69,18 +69,97 @@
             </section>
 
             <section>
-                <h3>Basic terms in git</h3>
+                <h3>Key concepts in git (1)</h3>
                 <ul>
                     <li><em>Git Repository(repo)</em>: is the project folder where Git tracks all versions of your files</li>
                     <li><em>Working Directory</em>: The files and folders you're actively editing.</li>
                     <li><em>Staging Area (Index)</em>: A temporary area to preview and prepare changes before committing.</li>
-                    <li><em>Commit</em>: A snapshot of your staged files with date, author, and message.</li>
-                    <li><em>Branch</em>: A snapshot of your staged files with date, author, and message.</li>
+                    <li><em>Snapshot</em>: A snapshot records all your files at a given point of time.</li>
+                    <li><em>Commit</em>: The act of taking a snapshot with date, author, and message.</li>
+
+                </ul>
+            </section>
+
+            <section>
+                <h3>Key concepts in git (2)</h3>
+                <ul>
+                    <li><em>Branch</em>: A branch is a collection of linked commits. Each repo must have at least one branch. The main branch is called <em>master</em> branch</li>
+                    <li><em>Master Branch</em>: is the production-ready code of your project </li>
+                    <li><em>HEAD</em>: A pointer to your current branch. It represents where you are in the Git history, and where the next commit will be written</li>
+                    <li><em>Merging Branch</em>: A temporary area to preview and prepare changes before committing.</li>
+                </ul>
+            </section>
+
+
+        </section>
+
+        <!--Slide 2: How does git work?-->
+
+        <section>
+            <section>
+                <h3>Git workflow</h3>
+                <img src="assets/git_workflow_commands.png" alt="git-workflow" style="width: 60%; height: auto;"/>
+
+            </section>
+
+            <section>
+                 <h3>Git merge branch</h3>
+                 <img src="assets/git-branch.png" alt="git-branch"/>
+            </section>
+        </section>
+
+        <!--Slide 3: What is github/gitlab?-->
+
+        <section>
+            <section>
+                <h3>What is github?</h3>
+                <p><a href="https://github.com/">github.com</a> is the most popular web-based git repository hosting service. It adds
+                extra functinality on top of git (e.g. UI, pull requests, project management, etc.). There are other similar git hosting services:</p>
+
+                <ul>
+                    <li><a href="https://about.gitlab.com/">Gitlab.com</a></li>
+                    <li><a href="https://bitbucket.org/">Bitbucket (by Atlassian)</a> </li>
+                    <li><a href="https://aws.amazon.com/codecommit/">AWS CodeCommit</a></li>
+                    <li><a href="https://azure.microsoft.com/en-us/products/devops">Azure DevOps (Repos)</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Self-hosted web-based git repository </h3>
+                <p>There are many self-hosted web-based git repositories:</p>
+
+                <ul>
+                    <li><em>GitLab Community Edition (CE)</em>: Full-featured web-based git repository and open source</li>
+                    <li>Gitea: Lightweight, open source, easy to install </li>
+                    <li>SourceHut: Modular, minimalist, fast</li>
+                    <li>Gitprep: It is Github clone</li>
                 </ul>
             </section>
         </section>
 
+         <!--Slide 4: git at casd -->
 
+          <section>
+            <section>
+                <h3>Git at casd</h3>
+                <p>CASD proposes two types of remote git repository: git-bare and <em>self-hosted gitlab-ce server</em> </p>
+                <ul>
+                    <li>Git Bare Repository: provided by default for all CASD projects</li>
+                    <li>gitlab-ce server: need to ask PMS for a cost estimation based on the server config</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>What is a Git Bare Repository? </h3>
+                <p>A bare repository is a Git repository that does not have a working directory. It only contains the <em>.git directory</em>
+                    (i.e., the version control data), and it's typically used:</p>
+
+                <ul>
+                    <li>As a <em>central repository</em> for collaboration (lightweight version of GitHub).</li>
+                    <li>As a <em>continuous deployment target</em>.</li>
+                </ul>
+            </section>
+          </section>
     </div>
 </div>
 
