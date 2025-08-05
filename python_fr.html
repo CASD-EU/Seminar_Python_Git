@@ -41,7 +41,7 @@
                 <ul>
                     <li>Pourquoi utiliser Python ?</li>
                     <li>Les concepts de base en Python</li>
-                    <li>Comment utiliser Python au CASD?</li>
+                    <li>Comment utiliser Python au CASD ?</li>
                     <li>La syntaxe de base en Python</li>
                     <li>Python pour la datascience</li>
                 </ul>
@@ -60,7 +60,7 @@
                 </p>
 
                 <p class="fragment">
-                    <em>R</em> est un <span style="font-weight: bold;"> language spécifique (Domain Specific Language)</span> 
+                    <em>R</em> est un <span style="font-weight: bold;"> langage spécifique (Domain Specific Language)</span> 
                     dédié à l'analyse et à la visualisation de données.
                 </p>
             </section>
@@ -95,7 +95,7 @@
                     <li class="fragment"><em>Langage interprété</em> : Plus lent que les langages compilés (ex : C, Go)</li>
                     <li class="fragment"><em>Typage dynamique</em> : L'interpréteur Python infère automatiquement le type 
                         des variables <a href="#/var-type" class="button">⏩ Exemple de code </a></li>
-                    <li class="fragment"><em>Faiblement typé</em> : pas comme Java <a href="#/weak-type" class="button">⏩
+                    <li class="fragment"><em>Pas fortement typé</em> : comme Java <a href="#/weak-type" class="button">⏩
                         Exemple de code</a></li>
                     <li class="fragment"><em>Verrou global de l'interpreteur (Global Interpreter Lock)</em> : les opérations ne 
                         peuvent pas tourner en parallèle sur plusieurs coeurs
@@ -159,7 +159,7 @@
                     <small>
                         <li class="fragment"><em>Environnement de développement intégré (IDE)</em> : Un logiciel qui propose
                             des outils facilitant la programmation : éditeur de code, analyse/cotrôle du code en temps réel 
-                            (linting), mode de débogage, ... (ex : Rstudio, VScode)
+                            (linting), mode de débogage, ... (ex : Rstudio, VSCode)
                         </li>
                     </small>
                     <small>
@@ -181,7 +181,7 @@
                     </small>
                     <small>
                         <li class="fragment"><em>Une machine virtuelle basée sur une pile</em> : Exécute les instructions en bytecode .pyc 
-                            pour permettre au code Python de produire le même résultats sur différentes systèmes d'exploitation
+                            pour permettre au code Python de produire le même résultat sur différents systèmes d'exploitation
                             (ex : Windows, Linux)
                         </li>
                     </small>
@@ -213,8 +213,8 @@
 
                 <ul>
                     <small>
-                        <li class="fragment"><em>Isolation</em> : Assurer l'independances des dépendances de chaque projet pour
-                            éviter les conflicts de versions.
+                        <li class="fragment"><em>Isolation</em> : Assurer l'independance des dépendances de chaque projet pour
+                            éviter les conflits de versions.
                         </li>
                     </small>
                     <small>
@@ -224,7 +224,7 @@
                     </small>
                     <small>
                         <li class="fragment"><em>Envionnement propre</em> : Eviter de polluer l'environnement Python avec
-                            packages spécifiques à certains projets.
+                            des packages spécifiques à certains projets.
                         </li>
                     </small>
                     <small>
@@ -244,7 +244,7 @@
                 <p><em>La gestion des librairies</em> en Python fait référence au système qui gère :</p>
                 <ul>
 
-                    <li class="fragment"> L'installation, la mise à jour, la suppression <em> de librairies tierces (ou
+                    <li class="fragment"> L'installation, la mise à jour, la suppression de <em> librairies tierces (ou
                         packages)</em></li>
 
 
@@ -333,7 +333,7 @@ my_project/
                     <li class="fragment"><em>Interpreteur Python</em> : conda</li>
                     <li class="fragment"><em>Environnement Virtuel</em> : conda</li>
                     <li class="fragment"><em>Gestionnaire de packages</em> : pip</li>
-                    <li class="fragment"><em>Environnement de développement intégré (IDE)</em> : vs-code</li>
+                    <li class="fragment"><em>Environnement de développement intégré (IDE)</em> : VSCode</li>
                     <li class="fragment"><em>Structure d'un projet & fichier de configuration</em> : Bonnes pratiques au CASD</li>
                 </ul>
             </section>
@@ -367,7 +367,7 @@ my_project/
                  pip list
                  # Installer un nouveau package (s'assurer que casd pypi server est en marche)
                  pip install pandas
-                 # Instaaler les packages via le fichier requirements.txt
+                 # Installer les packages via le fichier requirements.txt
                  pip install -r requirements.txt
 
                  # 5. Exécuter son code
@@ -396,9 +396,9 @@ my_project/
 
             <section>
                 <h3>Librairies tierces :</h3>
-                <small><p>Les utilisateurs doivent activer le <em>serveur CASD PyPi</em>, avant de lancer la commande suivante : </p></small>
+                <small><p>Les utilisateurs doivent activer le <em>serveur CASD PyPi</em> avant de lancer la commande suivante : </p></small>
                 <pre><code>pip install pandas</code></pre>
-                <small><p>Le<em> serveur CASD PyPi </em>ne dispose pas de tous les packages disponibles dans l'index officel PyPi. Vous pouvez
+                <small><p>Le<em> serveur CASD PyPi </em>ne dispose pas de tous les packages disponibles dans l'index officiel PyPi. Vous pouvez
                     tester la disponibilité d'un package avec les commandes suivantes :</p></small>
                 <pre><code class="language-Bash">pip install package-name --dry-run</code></pre>
                 ou
@@ -410,10 +410,10 @@ my_project/
 
         <!--Slide 5: vscode in CASD-->
         <section>
-            <h2>VScode au CASD</h2>
-            <p>Par defaut, <em>vscode</em> ne dispose pas des plugins nécesaires pour coder en Python .</p>
+            <h2>VSCode au CASD</h2>
+            <p>Par defaut, <em>VSCode</em> ne dispose pas des plugins nécesaires pour coder en Python .</p>
 
-            <p>Le CASD fournit les plugins <em>vscode</em> suivants pour Python :</p>
+            <p>Le CASD fournit les plugins <em>VSCode</em> suivants pour Python :</p>
 
             <ul>
                 <li class="fragment"><em>Emplacement des plugins</em> : S:\VsCode</li>
